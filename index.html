@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AlgoTrace | DSA Learning Visualizer</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<header class="header">
+
+<div class="logo">
+<h1>AlgoTrace</h1>
+<p>Learn • Code • Visualize • Analyze</p>
+</div>
+
+</header>
+
+
+
+<main>
+
+
+<section class="hero">
+
+<h2>Master Data Structures & Algorithms</h2>
+
+<p>
+Understand the logic, write your own code and visualize how algorithms work.
+</p>
+
+</section>
+
+
+
+
+<section class="algorithm-selection">
+
+
+<h2>Select Algorithm</h2>
+
+
+<select id="algorithmSelect">
+
+<option value="">Choose Algorithm</option>
+
+
+<optgroup label="Sorting">
+
+<option value="bubble">
+Bubble Sort
+</option>
+
+<option value="selection">
+Selection Sort
+</option>
+
+<option value="insertion">
+Insertion Sort
+</option>
+
+<option value="merge">
+Merge Sort
+</option>
+
+<option value="quick">
+Quick Sort
+</option>
+
+<option value="heap">
+Heap Sort
+</option>
+
+<option value="shell">
+Shell Sort
+</option>
+
+</optgroup>
+
+
+
+<optgroup label="Searching">
+
+<option value="linear">
+Linear Search
+</option>
+
+<option value="binary">
+Binary Search
+</option>
+
+</optgroup>
+
+
+
+<optgroup label="Tree">
+
+<option value="bst">
+Binary Search Tree
+</option>
+
+</optgroup>
+
+
+</select>
+
+
+</section>
+
+
+
+
+
+<section class="learning-section">
+
+
+<h2 id="selectedAlgorithm">
+Select an Algorithm
+</h2>
+
+
+<div class="learning-buttons">
+
+
+<button id="stepsBtn">
+Steps
+</button>
+
+
+<button id="explanationBtn">
+Explanation
+</button>
+
+
+<button id="complexityBtn">
+Complexity
+</button>
+
+
+<button id="visualizeBtn">
+Visualize
+</button>
+
+
+</div>
+
+
+
+<div id="learningContent">
+
+<p>
+Select a learning option to continue.
+</p>
+
+
+</div>
+
+
+</section>
+<section class="practice-section">
+
+
+<h2>Code Practice Mode</h2>
+
+
+<p>
+Understand the algorithm steps and write your own implementation.
+</p>
+
+
+<textarea id="codeEditor" placeholder="Write your code here..."></textarea>
+
+
+<button id="runCodeBtn">
+Run Code
+</button>
+
+
+<div id="codeResult">
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="input-section">
+
+
+<h2>Input</h2>
+
+
+<div class="input-group">
+
+
+<input 
+id="arrayInput"
+placeholder="Enter array values (Example: 5,3,8,1)"
+>
+
+
+<button id="createArrayBtn">
+Create Array
+</button>
+
+
+</div>
+
+
+
+<div class="input-group">
+
+
+<input
+id="targetInput"
+type="number"
+placeholder="Enter search target"
+>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section class="visualization-section">
+
+
+<h2>Visualization</h2>
+
+
+<div id="arrayContainer">
+
+</div>
+
+
+
+<div id="visualizationStatus">
+
+Ready
+
+</div>
+
+
+
+</section>
+<section class="bst-section">
+
+
+<h2>Binary Search Tree</h2>
+
+
+<div class="bst-controls">
+
+
+<input 
+id="bstInput"
+type="number"
+placeholder="Enter node value"
+>
+
+
+<button id="insertNodeBtn">
+Insert
+</button>
+
+
+<button id="searchNodeBtn">
+Search
+</button>
+
+
+<button id="deleteNodeBtn">
+Delete
+</button>
+
+
+</div>
+
+
+
+
+<div id="treeContainer">
+
+</div>
+
+
+
+
+
+<div class="traversal-card">
+
+
+<h3>Tree Traversal</h3>
+
+
+<div class="traversal-item">
+
+<b>Inorder:</b>
+
+<span id="inorder">
+-
+</span>
+
+</div>
+
+
+
+<div class="traversal-item">
+
+<b>Preorder:</b>
+
+<span id="preorder">
+-
+</span>
+
+</div>
+
+
+
+<div class="traversal-item">
+
+<b>Postorder:</b>
+
+<span id="postorder">
+-
+</span>
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+<section class="algorithm-analysis">
+
+
+<h2>Algorithm Analysis</h2>
+
+
+<div class="complexity-card">
+
+
+<h3>
+Complexity
+</h3>
+
+
+<p>
+<b>Best Case:</b>
+<span id="bestComplexity">
+-
+</span>
+</p>
+
+
+<p>
+<b>Average Case:</b>
+<span id="averageComplexity">
+-
+</span>
+</p>
+
+
+<p>
+<b>Worst Case:</b>
+<span id="worstComplexity">
+-
+</span>
+</p>
+
+
+<p>
+<b>Space Complexity:</b>
+<span id="spaceComplexity">
+-
+</span>
+</p>
+
+
+</div>
+
+
+
+</section>
+<section class="information-section">
+
+
+<h2>Algorithm Information</h2>
+
+
+<div class="info-card">
+
+
+<h3 id="algorithmTitle">
+-
+</h3>
+
+
+
+<p id="algorithmDescription">
+Select an algorithm to view information.
+</p>
+
+
+
+<div class="info-row">
+
+<b>Time Complexity:</b>
+
+<span id="timeComplexity">
+-
+</span>
+
+</div>
+
+
+
+
+<div class="info-row">
+
+<b>Space Complexity:</b>
+
+<span id="algorithmSpace">
+-
+</span>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="result-section">
+
+
+<h2>Execution Result</h2>
+
+
+<div id="resultBox">
+
+Ready
+
+</div>
+
+
+</section>
+
+
+
+</main>
+
+
+
+
+<footer>
+
+
+<p>
+© 2026 AlgoTrace | DSA Learning Visualizer
+</p>
+
+
+</footer>
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
